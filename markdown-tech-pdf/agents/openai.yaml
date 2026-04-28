@@ -1,0 +1,4 @@
+interface:
+  display_name: "Markdown Tech PDF"
+  short_description: "Export Markdown to professional technical PDF documents."
+  default_prompt: "Convert this Markdown document into a polished technical PDF with a standard documentation style."
