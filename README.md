@@ -2,6 +2,14 @@
 
 Codex skill for converting AI-generated Markdown summaries into polished technical PDF documents.
 
+## Install With npx
+
+```bash
+npx @zartt/markdown-tech-pdf
+```
+
+This copies the `markdown-tech-pdf` skill into your Codex skills directory and overwrites the previous local copy if one exists.
+
 ## What It Does
 
 - Converts Markdown into a restrained technical-document HTML layout.
@@ -10,7 +18,7 @@ Codex skill for converting AI-generated Markdown summaries into polished technic
 - Includes print-oriented CSS for A4 pages, readable code blocks, table styling, a title block, and a generated table of contents.
 - Uses Chinese-capable system font fallbacks for mixed English and Chinese documentation.
 
-## Install As A Codex Skill
+## Manual Install
 
 Copy the skill folder into your Codex skills directory:
 
