@@ -24,6 +24,18 @@ body {
   font-size: 11pt;
   line-height: 1.62;
 }
+@media screen {
+  html { background: #eef2f6; }
+  body {
+    max-width: 980px;
+    min-height: 1380px;
+    margin: 32px auto;
+    padding: 54px 60px;
+    background: #fff;
+    border: 1px solid #d7dde5;
+    box-shadow: 0 18px 50px rgba(31, 41, 55, .14);
+  }
+}
 .title-block {
   border-bottom: 2px solid #2f3a45;
   padding-bottom: 14px;

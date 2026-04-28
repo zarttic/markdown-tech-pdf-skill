@@ -1,6 +1,16 @@
 # Markdown Tech PDF Skill
 
-Codex skill for converting AI-generated Markdown summaries into polished technical PDF documents.
+Convert AI-generated Markdown summaries into polished technical PDF documents.
+
+This repository provides a Codex-compatible skill plus an `npx` installer. It is designed for engineering reports, API summaries, architecture notes, runbooks, implementation plans, and other Markdown documents that need a clean PDF export.
+
+## Preview
+
+![Technical document preview](docs/screenshots/technical-document-fold.png)
+
+Full-page example:
+
+![Full technical document preview](docs/screenshots/technical-document-preview.png)
 
 ## Install With npx
 
@@ -25,20 +35,34 @@ The CLI detects the `markdown-tech-pdf` skill from this repository and can insta
 - Converts Markdown into a restrained technical-document HTML layout.
 - Prints the HTML to PDF through a local Chromium-family browser such as Microsoft Edge, Google Chrome, or Chromium.
 - Supports common technical Markdown: headings, lists, checklists, links, blockquotes, fenced code blocks, and pipe tables.
-- Includes print-oriented CSS for A4 pages, readable code blocks, table styling, a title block, and a generated table of contents.
+- Adds a title block and generated table of contents.
+- Uses print-oriented CSS for A4 pages, readable code blocks, table styling, and stable spacing.
 - Uses Chinese-capable system font fallbacks for mixed English and Chinese documentation.
 
-## Manual Install
+## Example Markdown
 
-Copy the skill folder into your Codex skills directory:
+~~~markdown
+# API Integration Technical Summary
 
-```powershell
-Copy-Item -Recurse -Force `
-  ".\markdown-tech-pdf" `
-  "$env:USERPROFILE\.codex\skills\markdown-tech-pdf"
+## Goals
+
+- Produce a restrained engineering document.
+- Keep code blocks readable in print.
+- Support Chinese text: 这是一个技术文档导出测试。
+
+## Endpoint Table
+
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/v1/reports` | `POST` | Create report |
+
+## Client Helper
+
+```python
+def create_report(client, payload):
+    return client.post("/v1/reports", json=payload)
 ```
-
-Restart Codex after copying the folder.
+~~~
 
 ## Direct Script Usage
 
@@ -52,9 +76,35 @@ Optional HTML output:
 python ".\markdown-tech-pdf\scripts\md_to_tech_pdf.py" ".\sample.md" ".\sample.pdf" --html-output ".\sample.html"
 ```
 
+## Manual Install
+
+Copy the skill folder into your Codex skills directory:
+
+```powershell
+Copy-Item -Recurse -Force `
+  ".\markdown-tech-pdf" `
+  "$env:USERPROFILE\.codex\skills\markdown-tech-pdf"
+```
+
+Restart Codex after copying the folder.
+
 ## Requirements
 
 - Python 3.10+
 - Microsoft Edge, Google Chrome, or Chromium available on the machine
 
 No Pandoc dependency is required.
+
+## Repository Layout
+
+```text
+markdown-tech-pdf/
+  SKILL.md
+  agents/openai.yaml
+  references/technical-document-style.md
+  scripts/md_to_tech_pdf.py
+docs/screenshots/
+  technical-document-fold.png
+  technical-document-preview.png
+sample.md
+```

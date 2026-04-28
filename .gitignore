@@ -4,3 +4,4 @@ __pycache__/
 Thumbs.db
 sample.html
 sample.pdf
+docs/screenshots/*.html

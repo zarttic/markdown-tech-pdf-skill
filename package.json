@@ -1,12 +1,13 @@
 {
   "name": "@zartt/markdown-tech-pdf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Install a Codex skill for exporting Markdown technical documents to PDF.",
   "bin": {
     "markdown-tech-pdf": "bin/install.js"
   },
   "files": [
     "bin/",
+    "docs/screenshots/*.png",
     "markdown-tech-pdf/",
     "README.md",
     "sample.md"
