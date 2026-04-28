@@ -10,6 +10,16 @@ npx @zartt/markdown-tech-pdf
 
 This copies the `markdown-tech-pdf` skill into your Codex skills directory and overwrites the previous local copy if one exists.
 
+## Install With Vercel Skills
+
+This repository is compatible with the Vercel `skills` CLI:
+
+```bash
+npx skills add zarttic/markdown-tech-pdf-skill
+```
+
+The CLI detects the `markdown-tech-pdf` skill from this repository and can install it for supported agents.
+
 ## What It Does
 
 - Converts Markdown into a restrained technical-document HTML layout.
