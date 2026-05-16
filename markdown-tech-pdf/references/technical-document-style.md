@@ -6,6 +6,7 @@ Use this reference when adjusting the HTML/CSS or when judging whether the PDF l
 
 - Paper: A4.
 - Margins: about 18 mm top/bottom and 16 mm left/right.
+- Page numbers: centered at the bottom of each page (can be toggled via `--no-page-number`).
 - Background: white.
 - Body width: use the printable page naturally; do not center content in a narrow web-page column.
 
@@ -39,3 +40,6 @@ Use this reference when adjusting the HTML/CSS or when judging whether the PDF l
 - If code clips, enforce `white-space: pre-wrap` and `overflow-wrap: anywhere`.
 - If CJK text is missing, switch to system CJK fonts before considering embedded fonts.
 - If a section starts at the bottom of a page, apply `break-after: avoid` on headings.
+- If page numbers overlap content, adjust `@page` margins in `_CSS_PAGE_NUMBERS` in the script.
+- If a large table or code block is split awkwardly across pages, ensure `break-inside: avoid` is applied to its container.
+- For custom branding, pass `--extra-css` with your own styles (they append after defaults).
